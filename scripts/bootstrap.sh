@@ -18,6 +18,8 @@ if [ ! -d "$WEBROOT/wp-content" ]; then
   cp -R ./* "$WEBROOT"
 fi
 
+export PATH="$PATH:$WEBROOT/vendor/wp-cli/wp-cli/bin"
+
 if ! wp core is-installed --path="$WEBROOT"; then
   echo "Installing Wordpress"
   wp core install \
@@ -26,7 +28,8 @@ if ! wp core is-installed --path="$WEBROOT"; then
     --url="$SITE_URL" \
     --admin_user="$ACCOUNT_NAME" \
     --admin_email="$ACCOUNT_EMAIL" \
-    --admin_password="$ACCOUNT_PASS"
+    --admin_password="$ACCOUNT_PASS" \
+    --skip-email
 fi
 
 if ! wp plugin is-active s3-uploads --path="$WEBROOT"; then

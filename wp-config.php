@@ -92,6 +92,7 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+/** Define site URL */
 define('WP_HOME', getenv('SITE_URL'));
 define('WP_SITEURL', getenv('SITE_URL'));
 

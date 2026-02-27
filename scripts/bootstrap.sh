@@ -18,6 +18,8 @@ if [ ! -d "$WEBROOT/wp-content" ]; then
   cp -R ./* "$WEBROOT"
 fi
 
+export PATH="$PATH:$WEBROOT/vendor/wp-cli/wp-cli/bin"
+
 if ! wp core is-installed --path="$WEBROOT"; then
   echo "Installing Wordpress"
   wp core install \

@@ -100,23 +100,26 @@ This is an out-of-the-box implementation of WordPress. It's an example of how co
     Now you have a WordPress site. You should see output like this in your terminal:
 
     ```shell
-    App started
+    Waiting for app mywordpress to start...
 
+    Instances starting...
+    Instances starting...
+    Instances starting...
 
-    OK
+    name:              mywordpress
+    requested state:   started
+    routes:            mywordpress.app.cloud.gov
+    last uploaded:     Fri 27 Feb 09:50:54 EST 2026
+    stack:             cflinuxfs4
+    buildpacks:
+            name                                                version   detect output   buildpack name
+            php_buildpack                                       5.0.4     php             php
 
-    App mywordpress was started using this command `$HOME/.bp/bin/start`
-
-    Showing health and status for app mywordpress in org sandbox-gsa / space your.name as your.name@agency.gov...
-    OK
-
-    requested state: started
-    instances: 1/1
-    usage: 128M x 1 instances
-    urls: my-special-wordpress.app.cloud.gov
-    last uploaded: Tue Sep 26 22:21:49 UTC 2017
-    stack: cflinuxfs4
-    buildpack: https://github.com/cloudfoundry/php-buildpack
+    type:            web
+    sidecars:
+    instances:       1/1
+    memory usage:    128M
+    start command:   .bp/bin/start
     ```
 
     If you go to the URL listed under `urls` you should see a fresh WordPress site.

@@ -3,7 +3,7 @@
   "description": "A sample Wordpress site readily deployable to cloud.gov",
   "type": "project",
   "license": "GPL-2.0+",
-  "repositories":[
+  "repositories": [
     {
       "type": "composer",
       "url": "https://wpackagist.org"
@@ -31,8 +31,12 @@
   "extra": {
     "wordpress-install-dir": "wordpress",
     "installer-paths": {
-      "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "wordpress/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+      "wordpress/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wordpress/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     }
   }
 }

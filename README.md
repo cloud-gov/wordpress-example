@@ -149,13 +149,19 @@ This is an out-of-the-box implementation of WordPress. It's an example of how co
 By default, this example will the latest version of WordPress specified in `composer.json` and `composer.lock`. To update WordPress or pick up a new version of the PHP builpack, run:
 
 ```shell
-composer update johnpbloch/wordpress
+composer update johnpbloch/wordpress --with-all-dependencies
 ```
 
 Then, re-push your application:
 
 ```shell
 cf push
+```
+
+Update the database schema to support the newer version of WordPress:
+
+```shell
+cf run-task mywordpress --command "wp core update-db --path='/home/vcap/app/htdocs/'"
 ```
 
 We **do not recommend** using the wp-admin interface to manage updates to your site.

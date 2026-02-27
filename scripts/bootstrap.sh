@@ -28,8 +28,7 @@ if ! wp core is-installed --path="$WEBROOT"; then
     --url="$SITE_URL" \
     --admin_user="$ACCOUNT_NAME" \
     --admin_email="$ACCOUNT_EMAIL" \
-    --admin_password="$ACCOUNT_PASS" \
-    --skip-email
+    --admin_password="$ACCOUNT_PASS"
 fi
 
 if ! wp plugin is-active s3-uploads --path="$WEBROOT"; then

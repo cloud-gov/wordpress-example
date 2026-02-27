@@ -149,7 +149,7 @@ This is an out-of-the-box implementation of WordPress. It's an example of how co
 By default, this example will the latest version of WordPress specified in `composer.json` and `composer.lock`. To update WordPress or pick up a new version of the PHP builpack, run:
 
 ```shell
-composer update johnpbloch/wordpress
+composer update johnpbloch/wordpress --with-all-dependencies
 ```
 
 Then, re-push your application:

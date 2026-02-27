@@ -158,6 +158,12 @@ Then, re-push your application:
 cf push
 ```
 
+Update the database schema to support the newer version of WordPress:
+
+```shell
+cf run-task mywordpress --command "wp core update-db --path='/home/vcap/app/htdocs/'"
+```
+
 We **do not recommend** using the wp-admin interface to manage updates to your site.
 
 **Note: We recommend running the latest stable version of WordPress on production sites.** The latest version typically contains important security updates. If you pin the WordPress version, you will need to manually increment this value to upgrade your install. Make sure you follow [the update schedule on wordpress.org](https://wordpress.org/news/category/releases/) to keep up with important security and maintenance releases.
